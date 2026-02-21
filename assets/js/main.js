@@ -6,6 +6,35 @@
 */
 !(function($) {
   "use strict";
+  // =============================
+// MODERN MOBILE NAVIGATION
+// =============================
+
+$(document).ready(function () {
+
+  $('#hamburger').on('click', function () {
+    $(this).toggleClass('active');
+    $('#navMenu').toggleClass('active');
+    $('#navOverlay').toggleClass('active');
+    $('body').toggleClass('no-scroll');
+  });
+
+  $('#navOverlay').on('click', function () {
+    closeMenu();
+  });
+
+  $('#navMenu a').on('click', function () {
+    closeMenu();
+  });
+
+  function closeMenu() {
+    $('#hamburger').removeClass('active');
+    $('#navMenu').removeClass('active');
+    $('#navOverlay').removeClass('active');
+    $('body').removeClass('no-scroll');
+  }
+
+});
 
   // Hero typed
   if ($('.typed').length) {
