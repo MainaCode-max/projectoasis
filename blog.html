@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pastors' Blog - Oasis of Love Ministries</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Oasis of Love Ministries -Mwea">
+  <meta content="Oasis of Love Ministries -Mwea Blog" property="og:title">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Read the latest sermons and messages from Oasis of Love Ministries" name="description">
+  <meta content="Oasis of Love Ministries, Sermons, Blog, Messages, Teachings" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo-1.png" rel="icon">
+  <link href="assets/img/logo-1.png" rel="Oasis-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Blog Specific Styles */
+    
+    /*--------------------------------------------------------------
+    # Blog Section
+    --------------------------------------------------------------*/
+    .blog {
+      padding: 80px 0;
+    }
+
+    .blog-header {
+      background: linear-gradient(135deg, #173b6c 0%, #149ddd 100%);
+      padding: 60px 0;
+      margin-bottom: 50px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .blog-header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .blog-header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* Blog Filters */
+    .blog-filters {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .blog-filters ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .blog-filters li {
+      cursor: pointer;
+      padding: 10px 25px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #444444;
+      transition: all 0.3s;
+      border-radius: 50px;
+      border: 2px solid #e0e0e0;
+      background: #fff;
+    }
+
+    .blog-filters li:hover,
+    .blog-filters li.filter-active {
+      color: #fff;
+      background: #149ddd;
+      border-color: #149ddd;
+    }
+
+    /* Blog Posts Grid */
+    .blog-posts {
+      margin-bottom: 60px;
+    }
+
+    .blog-item {
+      margin-bottom: 40px;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .blog-image {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover .blog-image img {
+      transform: scale(1.1);
+    }
+
+    .blog-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #149ddd;
+      color: #fff;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .blog-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .blog-meta i {
+      color: #149ddd;
+    }
+
+    .blog-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #173b6c;
+      line-height: 1.4;
+    }
+
+    .blog-title a {
+      color: #173b6c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .blog-title a:hover {
+      color: #149ddd;
+    }
+
+    .blog-excerpt {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .blog-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .blog-author img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .blog-author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-author-name {
+      font-weight: 600;
+      color: #173b6c;
+      font-size: 14px;
+    }
+
+    .blog-author-role {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #149ddd;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: gap 0.3s;
+    }
+
+    .read-more:hover {
+      gap: 10px;
+      color: #0d7cb5;
+    }
+
+    /* Admin Button */
+    .admin-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #149ddd;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 4px 20px rgba(20, 157, 221, 0.4);
+      cursor: pointer;
+      z-index: 999;
+      transition: all 0.3s;
+    }
+
+    .admin-btn:hover {
+      background: #0d7cb5;
+      transform: scale(1.1);
+    }
+
+    /* Admin Modal */
+    .admin-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow-y: auto;
+    }
+
+    .admin-modal-content {
+      background-color: #fff;
+      margin: 3% auto;
+      padding: 0;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .admin-modal-header {
+      background: linear-gradient(135deg, #173b6c 0%, #149ddd 100%);
+      color: #fff;
+      padding: 25px 30px;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .admin-modal-header h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .close-modal {
+      color: #fff;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+      transition: transform 0.3s;
+    }
+
+    .close-modal:hover {
+      transform: scale(1.2);
+    }
+
+    .admin-modal-body {
+      padding: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #173b6c;
+      font-size: 14px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #149ddd;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .image-preview {
+      margin-top: 15px;
+      display: none;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+    }
+
+    .btn-submit {
+      background: #149ddd;
+      color: #fff;
+      padding: 14px 35px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: #0d7cb5;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(20, 157, 221, 0.4);
+    }
+
+    /* Pagination */
+    .blog-pagination {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .pagination {
+      display: inline-flex;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .pagination li {
+      display: inline-block;
+    }
+
+    .pagination a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      color: #173b6c;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .pagination a:hover,
+    .pagination a.active {
+      background: #149ddd;
+      color: #fff;
+      border-color: #149ddd;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .blog-header h1 {
+        font-size: 32px;
+      }
+
+      .blog-filters ul {
+        gap: 10px;
+      }
+
+      .blog-filters li {
+        padding: 8px 18px;
+        font-size: 13px;
+      }
+
+      .admin-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+      }
+
+      .admin-modal-content {
+        width: 95%;
+        margin: 5% auto;
+      }
+
+      .admin-modal-body {
+        padding: 20px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-container">
+
+        <!-- Logo/Brand -->
+        <div class="nav-brand">
+          <img src="assets/img/profile-img.jpeg" alt="Oasis of Love Ministries" class="brand-logo">
+          <span class="brand-name">Oasis of Love Ministries</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="gallery.html"><i class="bx bx-image"></i> <span>Gallery</span></a>
+          </li>
+          <li class="nav-item active">
+            <a href="blog.html"><i class="bx bx-book-content"></i> <span>Blog</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#multi-video"><i class="icofont-video"></i> <span>Videos</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+          </li>
+        </ul>
+
+        <!-- Social Links -->
+        <div class="nav-social">
+          <a href="https://www.facebook.com/OasisMwea" class="facebook" aria-label="Facebook">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://instagram.com/nimaan_777?igsh..." class="instagram" aria-label="Instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.snapchat.com/add/nimaan777" class="snapchat" aria-label="Snapchat">
+            <i class="bx bxl-snapchat"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button type="button" class="mobile-nav-toggle" id="mobileToggle">
+          <i class="bx bx-menu"></i>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Blog Header ======= -->
+    <section class="blog-header">
+      <div class="container">
+        <h1 data-aos="fade-up">Pastors' Blog</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Sermons, Messages & Teachings from our Pastors</p>
+      </div>
+    </section>
+
+    <!-- ======= Blog Section ======= -->
+    <section class="blog">
+      <div class="container">
+
+        <!-- Blog Filters -->
+        <div class="blog-filters" data-aos="fade-up">
+          <ul>
+            <li class="filter-active" data-filter="*">All Posts</li>
+            <li data-filter=".sermon">Sermons</li>
+            <li data-filter=".teaching">Teachings</li>
+            <li data-filter=".testimony">Testimonies</li>
+            <li data-filter=".announcement">Announcements</li>
+          </ul>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="row blog-posts" id="blogPostsContainer">
+
+          <!-- Sample Blog Post 1 -->
+          <div class="col-lg-4 col-md-6 blog-item sermon" data-aos="fade-up">
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="assets/img/blog/sun1.jpeg" alt="Walking in Faith">
+                <span class="blog-category">Sermon</span>
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="bx bx-calendar"></i> Feb 10, 2026</span>
+                  <span><i class="bx bx-time"></i> 5 min read</span>
+                </div>
+                <h3 class="blog-title">
+                  <a href="#">God Is Glorified in Fruitfulness</a>
+                </h3>
+                <p class="blog-excerpt">
+                  MAIN SERVICE BLOG
+
+The Main Service was blessed with a powerful and life-transforming message delivered by Bishop Carson on the topic “Fruitfulness.” The sermon emphasized that fruitfulness is not only a sign of God’s blessing but also a way through which God is glorified and believers experience divine lifting.
+
+The teaching was anchored on 2 Corinthians 9:10–11 (NKJV):
+
+“Now may He who supplies seed to the sower, and bread for food, supply and multiply the seed you have sown and increase the fruits of your righteousness, while you are enriched in everything for all liberality, which causes thanksgiving through us to God.”
+
+Bishop Carson explained that when God opens His hand, He releases two significant provisions — bread and seed — each serving a different purpose in the life of a believer.
+
+Bread: God’s Provision for Immediate Needs
+
+Bread represents God’s provision for present necessities. It is a reminder that God cares about the daily needs of His people and faithfully provides for them. Bread satisfies immediate hunger and sustains life, showing God’s love and concern for His children.
+
+Seed: God’s Plan for Future and Generational Impact
+
+Bishop Carson emphasized that not everything God gives is meant to be consumed. Some blessings come as seeds meant to be planted for future harvest and generational transformation. Seeds carry the power of multiplication and long-term fruitfulness.
+
+Types of Seeds That Produce Fruitfulness
+1. The Seed of the Word
+
+God releases purpose, direction, and destiny through His Word. The message highlighted that how believers receive and handle the Word of God determines the nature of their spiritual journey, including their victories and challenges.
+
+2. The Seed of Relationships
+
+The congregation was reminded that some relationships are divinely ordained. Not everyone we meet comes by coincidence; some people are seeds planted by God for our growth, breakthrough, and destiny.
+
+Believers were encouraged to guard relationships carefully and avoid breaking meaningful connections prematurely, as the future may be hidden in the relationships God brings into our lives.
+
+This truth was illustrated through 1 Samuel 30:13, showing how divine connections can lead to restoration and miracles.
+
+Seed Factors That Determine Fruitfulness
+
+Bishop Carson taught that fruitfulness is influenced by the quality of seeds planted. The quality of one’s seed determines the quality and quantity of the harvest. This principle applies not only to giving but also to relationships, character, and spiritual growth.
+
+Referencing Isaiah 5:2, he explained how careful preparation and intentional planting are necessary to produce good fruit.
+
+The Role of Prayer in Fruitfulness
+
+Prayer was described as the force that opens the heavens and releases rain. However, rain alone does not produce fruit; it nurtures the seed that has already been planted. Without sowing, there can be no harvest.
+
+Living a Fruitful Life
+
+The congregation was encouraged to practice intentional sowing in everyday life. Bishop Carson reminded believers that:
+
+When you sow love, you reap love.
+
+When you show kindness, you receive joy.
+
+When you make someone smile, you create lasting happiness.
+
+Conclusion
+
+Fruitfulness is a result of intentional living, wise relationship building, obedience to God’s Word, and a consistent prayer life. As believers remain faithful in planting the right seeds, God promises multiplication, increase, and a life that glorifies Him.
+                </p>
+                <div class="blog-footer">
+                  <div class="blog-author">
+                    <img src="assets/img/Bishopcarsonlilian.jpg" alt="Bishop Carson">
+                    <div class="blog-author-info">
+                      <span class="blog-author-name">Bishop Dr. Carson</span>
+                      <span class="blog-author-role">Senior Pastor</span>
+                    </div>
+                  </div>
+                  <a href="#" class="read-more">
+                    Read More <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Blog Post 2 -->
+          <div class="col-lg-4 col-md-6 blog-item teaching" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="assets/img/profile-img.jpeg" alt="Power of Prayer">
+                <span class="blog-category">Teaching</span>
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="bx bx-calendar"></i> Feb 8, 2026</span>
+                  <span><i class="bx bx-time"></i> 7 min read</span>
+                </div>
+                <h3 class="blog-title">
+                  <a href="#">The Power of Prayer in Our Lives</a>
+                </h3>
+                <p class="blog-excerpt">
+                  Prayer is our direct communication with God. Discover how to develop a powerful prayer life 
+                  and see God work miracles in your situations. Prayer changes things and transforms lives...
+                </p>
+                <div class="blog-footer">
+                  <div class="blog-author">
+                    <img src="assets/img/profile-img.jpeg" alt="Pastor Calbert">
+                    <div class="blog-author-info">
+                      <span class="blog-author-name">Pastor Calbert Njeru</span>
+                      <span class="blog-author-role">Associate Pastor</span>
+                    </div>
+                  </div>
+                  <a href="#" class="read-more">
+                    Read More <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Blog Post 3 -->
+          <div class="col-lg-4 col-md-6 blog-item testimony" data-aos="fade-up" data-aos-delay="200">
+            <div class="blog-card">
+              <div class="blog-image">
+                <img src="assets/img/HOME 2-1.jpg" alt="God's Faithfulness">
+                <span class="blog-category">Testimony</span>
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="bx bx-calendar"></i> Feb 5, 2026</span>
+                  <span><i class="bx bx-time"></i> 4 min read</span>
+                </div>
+                <h3 class="blog-title">
+                  <a href="#">Testimonies of God's Faithfulness</a>
+                </h3>
+                <p class="blog-excerpt">
+                  Hear amazing testimonies from our church family about how God has been faithful in their lives. 
+                  From healings to provisions, God continues to show His love and power in our midst...
+                </p>
+                <div class="blog-footer">
+                  <div class="blog-author">
+                    <img src="assets/img/profile-img.jpeg" alt="Church Family">
+                    <div class="blog-author-info">
+                      <span class="blog-author-name">Church Family</span>
+                      <span class="blog-author-role">Testimonies</span>
+                    </div>
+                  </div>
+                  <a href="#" class="read-more">
+                    Read More <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="blog-pagination" data-aos="fade-up">
+          <ul class="pagination">
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><i class="bx bx-chevron-right"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+  <!-- Admin Button -->
+  <div class="admin-btn" id="adminBtn" title="Add New Post">
+    <i class="bx bx-plus"></i>
+  </div>
+
+  <!-- Admin Modal -->
+  <div id="adminModal" class="admin-modal">
+    <div class="admin-modal-content">
+      <div class="admin-modal-header">
+        <h2><i class="bx bx-edit"></i> Add New Blog Post</h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="admin-modal-body">
+        <form id="blogPostForm">
+          
+          <div class="form-group">
+            <label for="postTitle">Post Title *</label>
+            <input type="text" id="postTitle" name="postTitle" required placeholder="Enter post title">
+          </div>
+
+          <div class="form-group">
+            <label for="postCategory">Category *</label>
+            <select id="postCategory" name="postCategory" required>
+              <option value="">Select Category</option>
+              <option value="sermon">Sermon</option>
+              <option value="teaching">Teaching</option>
+              <option value="testimony">Testimony</option>
+              <option value="announcement">Announcement</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="postAuthor">Author *</label>
+            <select id="postAuthor" name="postAuthor" required>
+              <option value="">Select Author</option>
+              <option value="Bishop Dr. Carson|Senior Pastor|assets/img/Bishopcarsonlilian.jpg">Bishop Dr. Carson</option>
+              <option value="Pastor Calbert Njeru|Associate Pastor|assets/img/profile-img.jpeg">Pastor Calbert Njeru</option>
+              <option value="Pastor Davis Muroki|Associate Pastor|assets/img/profile-img.jpeg">Pastor Davis Muroki</option>
+              <option value="Rev. Lilian Carson|Co-Pastor|assets/img/Bishopcarsonlilian.jpg">Rev. Lilian Carson</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="postImage">Featured Image *</label>
+            <input type="file" id="postImage" name="postImage" accept="image/*" required>
+            <div class="image-preview" id="imagePreview">
+              <img id="previewImg" src="" alt="Image preview">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="postExcerpt">Excerpt (Short Description) *</label>
+            <textarea id="postExcerpt" name="postExcerpt" required placeholder="Write a brief summary of your post (2-3 sentences)"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="postContent">Full Content *</label>
+            <textarea id="postContent" name="postContent" required placeholder="Write your full sermon or message here..." style="min-height: 250px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <i class="bx bx-send"></i> Publish Post
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="">Elvis Maina</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Blog Custom JS -->
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Modal functionality
+    const adminBtn = document.getElementById('adminBtn');
+    const adminModal = document.getElementById('adminModal');
+    const closeModal = document.querySelector('.close-modal');
+    const blogPostForm = document.getElementById('blogPostForm');
+    const imageInput = document.getElementById('postImage');
+    const imagePreview = document.getElementById('imagePreview');
+    const previewImg = document.getElementById('previewImg');
+
+    // Open modal
+    adminBtn.addEventListener('click', function() {
+      adminModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal
+    closeModal.addEventListener('click', function() {
+      adminModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+      if (event.target == adminModal) {
+        adminModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Image preview
+    imageInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          previewImg.src = e.target.result;
+          imagePreview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Form submission
+    blogPostForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get form data
+      const title = document.getElementById('postTitle').value;
+      const category = document.getElementById('postCategory').value;
+      const authorData = document.getElementById('postAuthor').value.split('|');
+      const excerpt = document.getElementById('postExcerpt').value;
+      const content = document.getElementById('postContent').value;
+      const imageFile = imageInput.files[0];
+
+      // Get current date
+      const today = new Date();
+      const dateString = today.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+      // Create new blog post card
+      const blogContainer = document.getElementById('blogPostsContainer');
+      const newPost = document.createElement('div');
+      newPost.className = `col-lg-4 col-md-6 blog-item ${category}`;
+      newPost.setAttribute('data-aos', 'fade-up');
+
+      // Calculate read time (rough estimate: 200 words per minute)
+      const wordCount = content.split(' ').length;
+      const readTime = Math.ceil(wordCount / 200);
+
+      newPost.innerHTML = `
+        <div class="blog-card">
+          <div class="blog-image">
+            <img src="${previewImg.src}" alt="${title}">
+            <span class="blog-category">${category.charAt(0).toUpperCase() + category.slice(1)}</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="bx bx-calendar"></i> ${dateString}</span>
+              <span><i class="bx bx-time"></i> ${readTime} min read</span>
+            </div>
+            <h3 class="blog-title">
+              <a href="#">${title}</a>
+            </h3>
+            <p class="blog-excerpt">
+              ${excerpt}
+            </p>
+            <div class="blog-footer">
+              <div class="blog-author">
+                <img src="${authorData[2]}" alt="${authorData[0]}">
+                <div class="blog-author-info">
+                  <span class="blog-author-name">${authorData[0]}</span>
+                  <span class="blog-author-role">${authorData[1]}</span>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Add new post to the beginning
+      blogContainer.insertBefore(newPost, blogContainer.firstChild);
+
+      // Reinitialize Isotope if available
+      if (typeof jQuery !== 'undefined' && jQuery.fn.isotope) {
+        jQuery('.blog-posts').isotope('reloadItems').isotope();
+      }
+
+      // Reset form and close modal
+      blogPostForm.reset();
+      imagePreview.style.display = 'none';
+      adminModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+
+      // Show success message
+      alert('Blog post published successfully!');
+
+      // Scroll to top to see new post
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Isotope filtering
+    if (typeof jQuery !== 'undefined' && jQuery.fn.isotope) {
+      jQuery(document).ready(function($) {
+        // Initialize Isotope
+        var blogIsotope = $('.blog-posts').isotope({
+          itemSelector: '.blog-item',
+          layoutMode: 'fitRows'
+        });
+
+        // Filter items on button click
+        $('.blog-filters li').on('click', function() {
+          $('.blog-filters li').removeClass('filter-active');
+          $(this).addClass('filter-active');
+
+          var filterValue = $(this).attr('data-filter');
+          blogIsotope.isotope({ filter: filterValue });
+        });
+      });
+    }
+  </script>
+
+</body>
+
+</html>

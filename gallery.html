@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Photo Gallery - Oasis of Love Ministries - Mwea</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Oasis of Love Ministries - Mwea">
+  <meta content="Photo Gallery - Oasis of Love Ministries - Mwea" property="og:title">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="View photos from our worship services, events, and church activities" name="description">
+  <meta content="Oasis of Love Ministries, Church Gallery, Photos, Events, Worship" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo-1.png" rel="icon">
+  <link href="assets/img/logo-1.png" rel="Oasis-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Gallery Page Specific Styles - Optimized */
+    
+    .gallery-page-header {
+      background: linear-gradient(135deg, #173b6c 0%, #149ddd 100%);
+      padding: 100px 0 60px;
+      margin-top: 80px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .gallery-page-header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .gallery-page-header p {
+      font-size: 16px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 15px;
+    }
+
+    .breadcrumb-nav {
+      background: transparent;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    .breadcrumb-nav a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .breadcrumb-nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .breadcrumb-nav span {
+      opacity: 0.6;
+      margin: 0 8px;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 60px 0;
+      background: #f5f8fd;
+    }
+
+    /* Gallery Stats - Simplified */
+    .gallery-stats {
+      background: #fff;
+      padding: 30px 0;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .stat-item i {
+      font-size: 36px;
+      color: #149ddd;
+      margin-bottom: 8px;
+    }
+
+    .stat-item h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #173b6c;
+      margin: 8px 0 5px;
+    }
+
+    .stat-item p {
+      color: #666;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    /* Gallery Filter - Simplified */
+    .filter-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #gallery-filters {
+      padding: 8px;
+      margin: 0 auto;
+      list-style: none;
+      text-align: center;
+      background: #fff;
+      border-radius: 40px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      gap: 5px;
+    }
+
+    #gallery-filters li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #444444;
+      transition: all 0.3s ease;
+      border-radius: 30px;
+      border: 2px solid transparent;
+    }
+
+    #gallery-filters li:hover,
+    #gallery-filters li.filter-active {
+      color: #fff;
+      background: #149ddd;
+      border-color: #149ddd;
+    }
+
+    /* Gallery Items - Optimized */
+    .gallery-container {
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      margin-bottom: 25px;
+    }
+
+    .gallery-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #173b6c;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-wrap:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-wrap img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-wrap:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-wrap .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(23, 59, 108, 0.85);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-wrap:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay h4 {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .gallery-overlay p {
+      color: #ffffff;
+      font-size: 14px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .gallery-overlay .btn-view {
+      color: #fff;
+      background: #149ddd;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gallery-overlay .btn-view:hover {
+      background: #0d7cb5;
+      transform: scale(1.05);
+    }
+
+    /* Upload Section - Simplified */
+    .upload-cta {
+      background: linear-gradient(135deg, #149ddd 0%, #173b6c 100%);
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 40px;
+      color: #fff;
+    }
+
+    .upload-cta h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .upload-cta p {
+      margin-bottom: 20px;
+      opacity: 0.9;
+      font-size: 15px;
+    }
+
+    .upload-cta .btn-upload {
+      background: #fff;
+      color: #149ddd;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .upload-cta .btn-upload:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsive - Mobile Optimized */
+    @media (max-width: 768px) {
+      .gallery-page-header {
+        padding: 80px 0 50px;
+      }
+
+      .gallery-page-header h1 {
+        font-size: 28px;
+      }
+
+      .gallery-page-header p {
+        font-size: 14px;
+      }
+
+      #gallery-filters {
+        flex-direction: column;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 300px;
+      }
+
+      #gallery-filters li {
+        width: 100%;
+        margin: 0;
+        padding: 12px 20px;
+        border-radius: 8px;
+      }
+
+      .gallery-wrap img {
+        height: 220px;
+      }
+
+      .stat-item {
+        padding: 10px;
+      }
+
+      .stat-item h3 {
+        font-size: 28px;
+      }
+
+      .gallery-stats {
+        padding: 20px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gallery-wrap img {
+        height: 200px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        
+        <!-- Logo/Brand -->
+        <div class="nav-brand">
+          <img src="assets/img/profile-img.jpeg" alt="Oasis of Love Ministries" class="brand-logo">
+          <span class="brand-name">Oasis of Love Ministries</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <li class="nav-item active">
+            <a href="gallery.html"><i class="bx bx-image"></i> <span>Gallery</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html"><i class="bx bx-book-content"></i> <span>Blog</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#multi-video"><i class="icofont-video"></i> <span>Videos</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+          </li>
+        </ul>
+
+        <!-- Social Links -->
+        <div class="nav-social">
+          <a href="https://www.facebook.com/OasisMwea" class="facebook" aria-label="Facebook">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://instagram.com/nimaan_777?igsh..." class="instagram" aria-label="Instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button type="button" class="mobile-nav-toggle" id="mobileToggle">
+          <i class="bx bx-menu"></i>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Gallery Page Header ======= -->
+  <section class="gallery-page-header">
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <p>Capturing moments of worship, fellowship, and God's amazing work in our church family</p>
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Gallery</span>
+      </div>
+    </div>
+  </section>
+  <!-- End Gallery Page Header -->
+
+  <main id="main">
+
+    <!-- ======= Gallery Section ======= -->
+    <section class="gallery-section">
+      <div class="container">
+
+        <!-- Gallery Stats -->
+        <div class="gallery-stats">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="stat-item">
+                <i class="bx bx-camera"></i>
+                <h3>2000+</h3>
+                <p>Videos/Photos</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="stat-item">
+                <i class="bx bx-calendar-event"></i>
+                <h3>200+</h3>
+                <p>Events</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="stat-item">
+                <i class="bx bx-group"></i>
+                <h3>500+</h3>
+                <p>Members</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="stat-item">
+                <i class="bx bx-heart"></i>
+                <h3>10+</h3>
+                <p>Years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Filter -->
+        <div class="filter-container">
+          <ul id="gallery-filters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".worship">Worship</li>
+            <li data-filter=".events">Events</li>
+            <li data-filter=".outreach">Outreach</li>
+          </ul>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="row gallery-container">
+          
+          <!-- Gallery Item 1 -->
+          <div class="col-lg-4 col-md-6 gallery-item worship">
+            <div class="gallery-wrap">
+              <img src="assets/img/Worship/1.jpg" class="img-fluid" alt="Sunday Worship">
+              <div class="gallery-overlay">
+                <h4>Sunday Worship Service</h4>
+                <p>Praising God Together</p>
+                <a href="assets/img/Worship/1.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/1.jpg" class="img-fluid" alt="Consecration Service">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/1.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+             <!-- Gallery Item 2 a -->
+          <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/4.jpg" class="img-fluid" alt="Consecration Service">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/4.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+              <!-- Gallery Item 2 b -->
+          <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/5.jpg" class="img-fluid" alt="Consecration Service">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/5.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+              <!-- Gallery Item 2 c -->
+          <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/6.jpg" class="img-fluid" alt="Consecration Service">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/6.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+            <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/7.jpg" class="img-fluid" alt="Consecration Service">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/7.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+            <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/8.jpg" class="img-fluid" alt="Consecration Service">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/8.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="col-lg-4 col-md-6 gallery-item worship">
+            <div class="gallery-wrap">
+              <img src="assets/img/Worship/2.jpg" class="img-fluid" alt="Praise & Worship">
+              <div class="gallery-overlay">
+                <h4>Praise & Worship</h4>
+                <p>Worship Team in Action</p>
+                <a href="assets/img/Worship/2.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5 -->
+          <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/2.jpg" class="img-fluid" alt="Church Gathering">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/2.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 7 -->
+          <div class="col-lg-4 col-md-6 gallery-item worship">
+            <div class="gallery-wrap">
+              <img src="assets/img/Worship/3.jpg" class="img-fluid" alt="Morning Service">
+              <div class="gallery-overlay">
+                <h4>Morning Worship</h4>
+                <p>Seeking God's Presence</p>
+                <a href="assets/img/Worship/3.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 9 -->
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/1.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/1.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/2.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/2.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/3.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/3.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/4.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/4.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/5.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/5.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/6.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/6.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 gallery-item outreach">
+            <div class="gallery-wrap">
+              <img src="assets/img/Outreach/7.jpg" class="img-fluid" alt="Community Outreach">
+              <div class="gallery-overlay">
+                <h4>Community Outreach</h4>
+                <p>Serving Our Community</p>
+                <a href="assets/img/Outreach/7.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Item 11 -->
+          <div class="col-lg-4 col-md-6 gallery-item events">
+            <div class="gallery-wrap">
+              <img src="assets/img/Events/3.jpg" class="img-fluid" alt="Easter Celebration">
+              <div class="gallery-overlay">
+                <a href="assets/img/Events/3.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 12 -->
+          <div class="col-lg-4 col-md-6 gallery-item worship">
+            <div class="gallery-wrap">
+              <img src="assets/img/Worship/4.jpg" class="img-fluid" alt="Evening Service">
+              <div class="gallery-overlay">
+                <h4>Evening Service</h4>
+                <p>Worship & Word</p>
+                <a href="assets/img/Worship/4.jpg" class="btn-view venobox" data-gall="gallery">
+                  <i class="bx bx-show"></i> View
+                </a>
+              </div>
+            </div>
+          </div>
+    </section>
+    <!-- End Gallery Section -->
+
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="">Elvis Maina</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Gallery Filter Script -->
+  <script>
+    // Initialize Isotope for gallery filtering
+    jQuery(document).ready(function($) {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+
+      // Initialize Isotope
+      var galleryIsotope = $('.gallery-container').isotope({
+        itemSelector: '.gallery-item',
+        layoutMode: 'fitRows'
+      });
+
+      // Filter items on button click
+      $('#gallery-filters li').on('click', function() {
+        $('#gallery-filters li').removeClass('filter-active');
+        $(this).addClass('filter-active');
+
+        var filterValue = $(this).attr('data-filter');
+        galleryIsotope.isotope({ filter: filterValue });
+      });
+
+      // Initialize Venobox
+      $('.venobox').venobox({
+        share: false
+      });
+    });
+  </script>
+
+</body>
+
+</html>
