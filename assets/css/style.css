@@ -59,21 +59,23 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 75px;
-  background: rgba(4, 11, 20, 0.95);
+  height: 70px;
+  background: rgba(4, 11, 20, 0.97);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 9999;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
   max-width: 1300px;
   margin: auto;
   height: 100%;
-  padding: 0 25px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* Logo */
@@ -81,100 +83,130 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  z-index: 10001;
 }
 
 .brand-logo {
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 2px solid #149ddd;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .brand-name {
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+  white-space: nowrap;
 }
 
 /* Desktop Menu */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 4px;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .nav-menu li a {
   color: #a8a9b4;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   padding: 8px 14px;
   border-radius: 6px;
-  transition: 0.3s;
+  transition: 0.25s;
+  display: block;
+  white-space: nowrap;
 }
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
   color: #fff;
-  background: rgba(20, 157, 221, 0.15);
+  background: rgba(20, 157, 221, 0.18);
+  text-decoration: none;
 }
 
 /* Give Button */
 .nav-give a {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
   color: #fff !important;
-  border-radius: 50px;
-  padding: 8px 18px;
+  border-radius: 50px !important;
+  padding: 8px 18px !important;
   transition: 0.3s;
 }
 
 .nav-give a:hover {
   transform: translateY(-2px);
+  opacity: 0.9;
 }
 
-/* Hamburger */
+/* ==============================
+   HAMBURGER BUTTON
+============================== */
+
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  gap: 6px;
   cursor: pointer;
+  padding: 8px;
+  z-index: 10001;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.hamburger:hover {
+  background: rgba(20, 157, 221, 0.2);
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 5px;
-  transition: 0.3s;
+  width: 24px;
+  height: 2.5px;
+  background: #ffffff;
+  border-radius: 3px;
+  display: block;
+  transition: all 0.35s ease;
+  transform-origin: center;
 }
 
-/* Hamburger Animation */
+/* Animated X when open */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: translateY(8.5px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* Overlay */
+/* ==============================
+   OVERLAY (dim background)
+============================== */
+
 .nav-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.55);
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s;
-  z-index: 9998;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 9997;
 }
 
 .nav-overlay.active {
@@ -182,154 +214,130 @@ h1, h2, h3, h4, h5, h6 {
   visibility: visible;
 }
 
-/* Mobile */
+/* ==============================
+   MOBILE MENU
+============================== */
+
 @media (max-width: 991px) {
 
-  .brand-name {
-    display: none;
+  body {
+    padding-top: 70px;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 260px;
-    background: #040b14;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 100px 25px;
-    gap: 20px;
-    transition: 0.4s ease;
-    z-index: 9999;
-  }
-
-  .nav-menu.active {
-    right: 0;
-  }
-
-  .nav-menu li {
-    width: 100%;
-  }
-
-  .nav-menu li a {
-    width: 100%;
-    display: block;
-    font-size: 16px;
-  }
-}
-
-/* Prevent scroll */
-.no-scroll {
-  overflow: hidden;
-}
-
-/* Push page below navbar */
-body {
-  padding-top: 75px;
-}
-/*--------------------------------------------------------------
-# Responsive Design
---------------------------------------------------------------*/
-
-/* Tablets and larger */
-@media (min-width: 992px) {
-  .brand-name {
-    display: block;
-  }
-}
-
-/* Mobile devices */
-@media (max-width: 991px) {
   #header {
     height: 70px;
   }
 
-  .nav-container {
-    padding: 0 20px;
-  }
-
-  .brand-logo {
-    width: 45px;
-    height: 45px;
-  }
-
-  .brand-name {
-    font-size: 16px;
-    display: block;
-  }
-
-  .mobile-nav-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 280px;
-    height: calc(100vh - 70px);
-    background: rgba(4, 11, 20, 0.98);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 30px 0;
-    gap: 0;
-    transition: right 0.3s ease;
-    overflow-y: auto;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-menu.mobile-nav-active {
-    right: 0;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-menu a {
-    width: 100%;
-    padding: 15px 30px;
-    border-radius: 0;
-  }
-
-  .nav-menu .active a::after {
-    display: none;
-  }
-
-  .nav-social {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(4, 11, 20, 0.98);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: none;
-  }
-
-  .nav-social.mobile-nav-active {
+  /* Show hamburger */
+  .hamburger {
     display: flex;
   }
 
-  #main {
-    margin-top: 70px;
+  /* Hide brand name on very small screens */
+  @media (max-width: 400px) {
+    .brand-name {
+      display: none;
+    }
+  }
+
+  /* Slide-in panel from the right */
+  .nav-menu {
+    position: fixed;
+    top: 70px;              /* sits right below the navbar */
+    right: -100%;
+    bottom: 0;
+    width: 280px;
+    max-width: 85vw;
+    height: calc(100vh - 70px);
+    background: #040b14;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 20px 0 40px;
+    gap: 0;
+    overflow-y: auto;       /* scrollable if many items */
+    transition: right 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9998;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Slide in */
+  .nav-menu.active {
+    right: 0;
+  }
+
+  /* Each menu item full width */
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-menu li:last-child {
+    border-bottom: none;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  .nav-menu li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #c0c1cc;
+    padding: 16px 25px;
+    border-radius: 0;
+    transition: color 0.2s, background 0.2s, padding-left 0.2s;
+  }
+
+  .nav-menu li a:hover,
+  .nav-menu li a.active {
+    color: #fff;
+    background: rgba(20, 157, 221, 0.12);
+    padding-left: 32px;
+    text-decoration: none;
+  }
+
+  /* Give button stays pill-shaped inside panel */
+  .nav-give {
+    border-bottom: none !important;
+  }
+
+  .nav-give a {
+    display: flex !important;
+    justify-content: center !important;
+    border-radius: 50px !important;
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    margin: 0;
+  }
+
+  .nav-give a:hover {
+    padding-left: 20px !important;
   }
 }
 
-@media (max-width: 576px) {
+/* Prevent body scroll when menu open */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Push page content below fixed navbar */
+body {
+  padding-top: 70px;
+}
+
+/* ==============================
+   DESKTOP — show brand name always
+============================== */
+
+@media (min-width: 992px) {
   .brand-name {
-    font-size: 14px;
-    max-width: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: block;
+  }
+  .hamburger {
+    display: none !important;
   }
 }
 /*--------------------------------------------------------------
